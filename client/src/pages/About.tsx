@@ -1,61 +1,80 @@
 export default function AboutPage() {
     return (
-      <div className="min-h-screen bg-[oklch(0.984_0.018_98.111)]">
-        {/* Hero Section */}
-        <section className="bg-[oklch(0.969_0.036_98.111)] py-12">
-          <div className="max-w-3xl mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold text-[oklch(0.905_0.182_98.111)] mb-4">
-              KodJobs
+      <div className="min-h-screen flex flex-col">
+        {/* Main Content */}
+        <main className="flex-1" style={{ backgroundColor: 'oklch(0.984 0.018 98.111)' }}>
+          <section className="max-w-6xl mx-auto px-4 py-16">
+            <h1 className="text-4xl font-bold mb-8" style={{ color: 'oklch(0.852 0.199 91.936)' }}>
+              About TechConnect
             </h1>
-            <p className="text-lg text-[oklch(0.605_0.142_98.111)]">
-              Bridging ambition with opportunity in the digital age. We're redefining
-              tech recruitment through transparency and community.
-            </p>
-          </div>
-        </section>
-  
-        {/* Value Propositions */}
-        <div className="max-w-5xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8">
-          <div className="p-6 rounded-xl bg-[oklch(0.969_0.036_98.111)]">
-            <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[oklch(0.905_0.182_98.111)]">
-              <svg className="w-6 h-6 text-[oklch(0.984_0.018_98.111)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
+            
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
+              <div className="space-y-4">
+                <p className="text-lg" style={{ color: 'oklch(0.45 0.1 91.936)' }}>
+                  Bridging tech talent with innovative companies through intelligent matching and community-driven insights.
+                </p>
+                <button 
+                  className="px-6 py-3 rounded-lg font-medium transition-all hover:scale-105"
+                  style={{
+                    backgroundColor: 'oklch(0.852 0.199 91.936)',
+                    color: 'oklch(0.15 0.05 91.936)'
+                  }}
+                >
+                  Join Our Network
+                </button>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="p-6 rounded-xl" style={{ backgroundColor: 'oklch(0.95 0.05 91.936)' }}>
+                  <h3 className="text-xl font-semibold mb-2" style={{ color: 'oklch(0.852 0.199 91.936)' }}>
+                    300K+ Community Members
+                  </h3>
+                  <p style={{ color: 'oklch(0.45 0.1 91.936)' }}>
+                    Connect with developers, designers, and tech professionals worldwide
+                  </p>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-semibold text-[oklch(0.705_0.162_98.111)] mb-2">
-              Precision Matching
-            </h3>
-            <p className="text-[oklch(0.605_0.142_98.111)]">
-              Algorithmic matching that understands both technical requirements and team culture
-            </p>
-          </div>
+          </section>
+        </main>
   
-          <div className="p-6 rounded-xl bg-[oklch(0.969_0.036_98.111)]">
-            <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[oklch(0.905_0.182_98.111)]">
-              <svg className="w-6 h-6 text-[oklch(0.984_0.018_98.111)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
+        {/* Dark Yellow Footer */}
+        <footer 
+          className="py-12 mt-auto"
+          style={{
+            backgroundColor: 'oklch(0.35 0.25 91.936)',
+            color: 'oklch(0.85 0.1 91.936)'
+          }}
+        >
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold mb-4">TechConnect</h4>
+                <p className="text-sm opacity-90">
+                  Empowering tech careers since 2020
+                </p>
+              </div>
+              
+              <div>
+                <h5 className="font-medium mb-3">Resources</h5>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="#" className="hover:opacity-80">Career Guide</a></li>
+                  <li><a href="#" className="hover:opacity-80">Company Reviews</a></li>
+                  <li><a href="#" className="hover:opacity-80">Salary Insights</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h5 className="font-medium mb-3">Connect</h5>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="#" className="hover:opacity-80">Twitter</a></li>
+                  <li><a href="#" className="hover:opacity-80">LinkedIn</a></li>
+                  <li><a href="#" className="hover:opacity-80">GitHub</a></li>
+                </ul>
+              </div>
             </div>
-            <h3 className="text-xl font-semibold text-[oklch(0.705_0.162_98.111)] mb-2">
-              Community Powered
-            </h3>
-            <p className="text-[oklch(0.605_0.142_98.111)]">
-              300k+ developers sharing insights and opportunities
-            </p>
           </div>
-        </div>
-  
-        {/* CTA Section */}
-        <section className="bg-[oklch(0.905_0.182_98.111)] py-16">
-          <div className="max-w-3xl mx-auto px-4 text-center">
-            <h2 className="text-2xl font-semibold text-[oklch(0.984_0.018_98.111)] mb-6">
-              Start Your Journey
-            </h2>
-            <button className="bg-[oklch(0.984_0.018_98.111)] text-[oklch(0.905_0.182_98.111)] px-8 py-3 rounded-lg font-semibold hover:bg-[oklch(0.969_0.036_98.111)] transition-colors">
-              Explore Roles
-            </button>
-          </div>
-        </section>
+        </footer>
       </div>
     );
   }

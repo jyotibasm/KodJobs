@@ -70,7 +70,7 @@ export default function JobCard({ job }: JobCardProps) {
             whileTap={{ scale: 0.95 }}
           >
             <Button 
-              className="w-full bg-primary hover:bg-primary/90 transition-colors"
+              className="w-full bg-gradient-to-r from-primary to-primary/70 hover:opacity-90 transition-colors"
               onClick={handleApply}
             >
               Apply Now

@@ -2,6 +2,7 @@ import { useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { motion } from 'framer-motion';
+import { ErrorBoundary } from '@/components/error-boundary';
 
 function AnimatedSphere() {
   const meshRef = useRef<any>();
@@ -27,6 +28,28 @@ function AnimatedSphere() {
   );
 }
 
+function FallbackAnimation() {
+  return (
+    <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
+  );
+}
+
+export default function HeroAnimation() {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="absolute inset-0 -z-10 opacity-70"
+    >
+      <Suspense fallback={<FallbackAnimation />}>
+        <ErrorBoundary fallback={<FallbackAnimation />}>
+          {typeof window !== 'undefined' && <ThreeScene />}
+        </ErrorBoundary>
+      </Suspense>
+    </motion.div>
+  );
+}
+
 function ThreeScene() {
   return (
     <Canvas
@@ -40,21 +63,5 @@ function ThreeScene() {
       <pointLight position={[10, 10, 10]} intensity={1} />
       <AnimatedSphere />
     </Canvas>
-  );
-}
-
-export default function HeroAnimation() {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="absolute inset-0 -z-10 opacity-70"
-    >
-      <Suspense fallback={
-        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
-      }>
-        {typeof window !== 'undefined' && <ThreeScene />}
-      </Suspense>
-    </motion.div>
   );
 }

@@ -1,63 +1,58 @@
-
 export default function AboutPage() {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[oklch(0.984_0.018_98.111)]">
         {/* Hero Section */}
-        <section className="bg-yellow-50 py-12">
+        <section className="bg-[oklch(0.969_0.036_98.111)] py-12">
           <div className="max-w-3xl mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold text-yellow-900 mb-4">
-              Powering Tech Careers
+            <h1 className="text-4xl font-bold text-[oklch(0.905_0.182_98.111)] mb-4">
+              KodJobs
             </h1>
-            <p className="text-lg text-yellow-800">
-              We simplify tech hiring by connecting exceptional talent with innovative companies. 
-              Born from developer frustration, built for developer success.
+            <p className="text-lg text-[oklch(0.605_0.142_98.111)]">
+              Bridging ambition with opportunity in the digital age. We're redefining
+              tech recruitment through transparency and community.
             </p>
           </div>
         </section>
   
-        {/* Key Points */}
-        <section className="max-w-5xl mx-auto px-4 py-16">
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-yellow-50 p-6 rounded-xl">
-              <div className="w-10 h-10 bg-yellow-600 rounded-full mb-4 flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-yellow-900 mb-2">Smart Matching</h3>
-              <p className="text-yellow-800">AI-powered job matching that actually understands tech roles</p>
+        {/* Value Propositions */}
+        <div className="max-w-5xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8">
+          <div className="p-6 rounded-xl bg-[oklch(0.969_0.036_98.111)]">
+            <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[oklch(0.905_0.182_98.111)]">
+              <svg className="w-6 h-6 text-[oklch(0.984_0.018_98.111)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
             </div>
-  
-            <div className="bg-yellow-50 p-6 rounded-xl">
-              <div className="w-10 h-10 bg-yellow-600 rounded-full mb-4 flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-yellow-900 mb-2">Community Driven</h3>
-              <p className="text-yellow-800">250,000+ developers helping each other grow</p>
-            </div>
+            <h3 className="text-xl font-semibold text-[oklch(0.705_0.162_98.111)] mb-2">
+              Precision Matching
+            </h3>
+            <p className="text-[oklch(0.605_0.142_98.111)]">
+              Algorithmic matching that understands both technical requirements and team culture
+            </p>
           </div>
   
-          {/* Stats */}
-          <div className="text-center space-y-4">
-            <div className="text-yellow-900 font-bold text-3xl">
-              85% Interview Match Rate
+          <div className="p-6 rounded-xl bg-[oklch(0.969_0.036_98.111)]">
+            <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-[oklch(0.905_0.182_98.111)]">
+              <svg className="w-6 h-6 text-[oklch(0.984_0.018_98.111)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
             </div>
-            <div className="text-yellow-600 text-lg">
-              Average response time: 48 hours
-            </div>
+            <h3 className="text-xl font-semibold text-[oklch(0.705_0.162_98.111)] mb-2">
+              Community Powered
+            </h3>
+            <p className="text-[oklch(0.605_0.142_98.111)]">
+              300k+ developers sharing insights and opportunities
+            </p>
           </div>
-        </section>
+        </div>
   
-        {/* CTA */}
-        <section className="bg-yellow-900 text-white py-12">
+        {/* CTA Section */}
+        <section className="bg-[oklch(0.905_0.182_98.111)] py-16">
           <div className="max-w-3xl mx-auto px-4 text-center">
-            <h2 className="text-2xl font-semibold mb-4">
-              Ready to Level Up?
+            <h2 className="text-2xl font-semibold text-[oklch(0.984_0.018_98.111)] mb-6">
+              Start Your Journey
             </h2>
-            <button className="bg-white text-yellow-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-50 transition-colors">
-              Start Exploring Jobs
+            <button className="bg-[oklch(0.984_0.018_98.111)] text-[oklch(0.905_0.182_98.111)] px-8 py-3 rounded-lg font-semibold hover:bg-[oklch(0.969_0.036_98.111)] transition-colors">
+              Explore Roles
             </button>
           </div>
         </section>

@@ -15,6 +15,7 @@ export default function Home() {
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col relative overflow-hidden">
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-[100px] z-0" />
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-16">
         <BackgroundAnimation />
 
@@ -24,23 +25,13 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 relative z-10"
         >
-          <motion.h1 
-            className="text-6xl font-bold mb-6 flex flex-wrap justify-center items-center gap-x-4"
-            animate={{ 
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-            }}
-            transition={{ 
-              duration: 8, 
-              repeat: Infinity,
-              ease: "linear" 
-            }}
-          >
+          <h1 className="text-6xl font-bold mb-6 flex flex-wrap justify-center items-center gap-x-4">
+            <span className="text-foreground">Find</span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70" style={{ backgroundSize: "200% 100%" }}>
-              Find Your Dream
+              Your Dream Job
             </span>
-            <span className="text-foreground">Job</span>
             <span className="text-primary">in Tech</span>
-          </motion.h1>
+          </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover thousands of job opportunities for developers, designers, and tech professionals.
             Join our community of innovators and creators.

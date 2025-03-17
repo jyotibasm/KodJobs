@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, MeshDistortMaterial } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -27,6 +27,22 @@ function AnimatedSphere() {
   );
 }
 
+function ThreeScene() {
+  return (
+    <Canvas
+      camera={{ position: [0, 0, 5], fov: 75 }}
+      style={{ background: 'transparent' }}
+      dpr={[1, 2]}
+      performance={{ min: 0.5 }}
+      gl={{ antialias: true, alpha: true }}
+    >
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1} />
+      <AnimatedSphere />
+    </Canvas>
+  );
+}
+
 export default function HeroAnimation() {
   return (
     <motion.div
@@ -34,19 +50,11 @@ export default function HeroAnimation() {
       animate={{ opacity: 1 }}
       className="absolute inset-0 -z-10 opacity-70"
     >
-      {typeof window !== 'undefined' && (
-        <Canvas
-          camera={{ position: [0, 0, 5], fov: 75 }}
-          style={{ background: 'transparent' }}
-          dpr={[1, 2]} // Optimize for different device pixel ratios
-          performance={{ min: 0.5 }} // Allow performance scaling
-          gl={{ antialias: true, alpha: true }}
-        >
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1} />
-          <AnimatedSphere />
-        </Canvas>
-      )}
+      <Suspense fallback={
+        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
+      }>
+        {typeof window !== 'undefined' && <ThreeScene />}
+      </Suspense>
     </motion.div>
   );
 }

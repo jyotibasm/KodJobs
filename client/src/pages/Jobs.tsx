@@ -12,18 +12,24 @@ export default function Jobs() {
   const searchParams = new URLSearchParams(location.split('?')[1]);
   const { user } = useAuth();
 
-  const { data: jobs, isLoading } = useQuery({
+  const { data: jobs, isLoading, isError, error } = useQuery({
     queryKey: ['/api/jobs', searchParams.toString()],
     queryFn: async () => {
-      const res = await fetch(`https://www.themuse.com/api/public/jobs?level=Entry%20Level&page=1&descending=true${
-        searchParams.get('q') ? `&q=${searchParams.get('q')}` : ''
-      }${
-        searchParams.get('location') ? `&location=${searchParams.get('location')}` : ''
-      }`);
-      if (!res.ok) throw new Error('Failed to fetch jobs');
-      const data = await res.json();
-      return data.results;
-    }
+      try {
+        const res = await fetch(`https://www.themuse.com/api/public/jobs?level=Entry%20Level&page=1&descending=true${
+          searchParams.get('q') ? `&q=${searchParams.get('q')}` : ''
+        }${
+          searchParams.get('location') ? `&location=${searchParams.get('location')}` : ''
+        }`);
+        if (!res.ok) throw new Error('Failed to fetch jobs');
+        const data = await res.json();
+        return data.results;
+      } catch (err) {
+        console.error('Error fetching jobs:', err);
+        throw new Error('Failed to fetch jobs. Please try again later.');
+      }
+    },
+    enabled: !!user // Only fetch when user is authenticated
   });
 
   const handleSearch = (query: string, location: string) => {
@@ -67,6 +73,11 @@ export default function Jobs() {
           {[...Array(6)].map((_, i) => (
             <Card key={i} className="w-full h-48 animate-pulse" />
           ))}
+        </div>
+      ) : isError ? (
+        <div className="text-center py-8">
+          <p className="text-red-500 mb-4">{error?.message || 'Failed to load jobs'}</p>
+          <Button onClick={() => window.location.reload()}>Try Again</Button>
         </div>
       ) : (
         <motion.div 

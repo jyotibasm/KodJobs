@@ -10,18 +10,18 @@ export default function Header() {
     <header className="border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="text-2xl font-bold text-primary">KodJobs</a>
+          <span className="text-2xl font-bold text-primary cursor-pointer">KodJobs</span>
         </Link>
 
         <nav className="flex items-center space-x-6">
           <Link href="/">
-            <a className="hover:text-primary">Home</a>
+            <span className="hover:text-primary cursor-pointer">Home</span>
           </Link>
           <Link href="/jobs">
-            <a className="hover:text-primary">Jobs</a>
+            <span className="hover:text-primary cursor-pointer">Jobs</span>
           </Link>
           <Link href="/about">
-            <a className="hover:text-primary">About</a>
+            <span className="hover:text-primary cursor-pointer">About</span>
           </Link>
         </nav>
 

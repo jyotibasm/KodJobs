@@ -8,10 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { apiRequest } from "@/lib/queryClient";
 import { useLocation } from "wouter";
+import { useAuth } from "@/lib/auth";
 
 export default function Login() {
   const { toast } = useToast();
   const [, navigate] = useLocation();
+  const { login } = useAuth();
 
   const form = useForm<LoginUser>({
     resolver: zodResolver(loginSchema),
@@ -24,6 +26,7 @@ export default function Login() {
   const onSubmit = async (data: LoginUser) => {
     try {
       await apiRequest('POST', '/api/login', data);
+      login(data.username); // Store the username in auth context
       toast({
         title: "Success",
         description: "Logged in successfully"

@@ -1,7 +1,11 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { useAuth } from "@/lib/auth";
 
 export default function Header() {
+  const { user, logout } = useAuth();
+
   return (
     <header className="border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -22,12 +26,22 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <Link href="/login">
-            <Button variant="outline">Log In</Button>
-          </Link>
-          <Link href="/signup">
-            <Button>Sign Up</Button>
-          </Link>
+          <ThemeToggle />
+          {user ? (
+            <div className="flex items-center gap-4">
+              <span className="text-sm">Welcome, {user.username}!</span>
+              <Button variant="outline" onClick={logout}>Logout</Button>
+            </div>
+          ) : (
+            <>
+              <Link href="/login">
+                <Button variant="outline">Log In</Button>
+              </Link>
+              <Link href="/signup">
+                <Button>Sign Up</Button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>

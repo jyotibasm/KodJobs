@@ -32,7 +32,7 @@ export default function JobCard({ job }: JobCardProps) {
       transition={{ type: "spring", stiffness: 300 }}
     >
       <Card 
-        className="w-full h-full"
+        className="w-full h-full backdrop-blur-md bg-white/30 dark:bg-gray-950/30 border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-all duration-300"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -59,7 +59,7 @@ export default function JobCard({ job }: JobCardProps) {
 
           <div className="flex flex-wrap gap-2 mb-4">
             {job.levels.map((level) => (
-              <Badge key={level.name} variant="secondary">
+              <Badge key={level.name} variant="secondary" className="bg-white/10 backdrop-blur-sm">
                 {level.name}
               </Badge>
             ))}
@@ -70,7 +70,7 @@ export default function JobCard({ job }: JobCardProps) {
             whileTap={{ scale: 0.95 }}
           >
             <Button 
-              className="w-full bg-gradient-to-r from-primary to-primary/70 hover:opacity-90 transition-colors"
+              className="w-full bg-gradient-to-r from-primary to-primary/70 hover:opacity-90 transition-colors shadow-lg"
               onClick={handleApply}
             >
               Apply Now

@@ -25,7 +25,7 @@ export default function Home() {
           className="text-center mb-12 relative z-10"
         >
           <motion.h1 
-            className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70"
+            className="text-6xl font-bold mb-6 flex flex-wrap justify-center items-center gap-x-4"
             animate={{ 
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
@@ -34,9 +34,12 @@ export default function Home() {
               repeat: Infinity,
               ease: "linear" 
             }}
-            style={{ backgroundSize: "200% 100%" }}
           >
-            Find Your Dream Job in Tech
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70" style={{ backgroundSize: "200% 100%" }}>
+              Find Your Dream
+            </span>
+            <span className="text-foreground">Job</span>
+            <span className="text-primary">in Tech</span>
           </motion.h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover thousands of job opportunities for developers, designers, and tech professionals.
